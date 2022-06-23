@@ -3,6 +3,7 @@ version: "2"
 
 services:
   portainer:
+    container_name: portainer
     image: portainer/portainer-ce:latest
     restart: always
     networks:
@@ -12,6 +13,7 @@ services:
       - VIRTUAL_PORT=9000
     ports:
       - 8000:8000
+      - 9443:9443
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
